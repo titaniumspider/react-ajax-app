@@ -17,7 +17,7 @@ class App extends Component {
   componentDidMount() {
     var newList = Object.assign({}, this.state.list, { isLoading: true });
     this.setState({ list: newList });
-    fetch('react-ajax-app/list.json')
+    fetch('list.json')
       .then(function (result) {
         return result.json();
       })
@@ -39,7 +39,7 @@ class App extends Component {
       NavTag = <Nav list={this.state.list.items} onClick={function (id) {
         var newArticle = Object.assign({}, this.state.article, { isLoading: true });
         this.setState({ article: newArticle });
-        fetch('react-ajax-app/' + id + '.json')
+        fetch('' + id + '.json')
           .then(function (result) {
             return result.json();
           })
